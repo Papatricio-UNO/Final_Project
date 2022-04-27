@@ -1,7 +1,7 @@
 # Project One: Updated Lab 9
 # Features: GUI, mute button
 
-from P1_classes import *       # import statement needed to gain access to Television class
+from One_classes import *       # import statement needed to gain access to Television class
 
 
 def main():
