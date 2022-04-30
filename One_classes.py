@@ -9,12 +9,19 @@ class Television:
         self.__channel = Television.MIN_CHANNEL
         self.__volume = Television.MIN_VOLUME
         self.__status = False
+        self.__mute = False
 
     def power(self):
         if not self.__status:
             self.__status = True
         else:
             self.__status = False
+
+    def mute(self):
+        if not self.__nute:
+            self.__mute = True
+        else:
+            self.__mute = False
 
     def channel_up(self):
         if self.__status:
@@ -31,12 +38,14 @@ class Television:
                 self.__channel = Television.MAX_CHANNEL
 
     def volume_up(self):
-        if self.__status and self.__volume != Television.MAX_VOLUME:
-            self.__volume += 1
+        if self.__mute:
+            if self.__status and self.__volume != Television.MAX_VOLUME:
+                self.__volume += 1
 
     def volume_down(self):
-        if self.__status and self.__volume != Television.MIN_VOLUME:
-            self.__volume -= 1
+        if self.__mute:
+            if self.__status and self.__volume != Television.MIN_VOLUME:
+                self.__volume -= 1
 
     def __str__(self):
         return f'TV status: Is on = {self.__status}, ' \
