@@ -77,3 +77,7 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
                 if self.__mute and self.__volume != Television.MIN_VOLUME:
                     self.volume -= 1
                     self.Volume_label.sextText(f'Volume: {self.__volume}')
+
+#     def __str__(self):
+#          return f'TV status: Is on = {self.__status}, Mute status: Is on = {self.__mute}'\
+#                 f'Channel = {self.__channel}, Volume = {self.__volume}'
