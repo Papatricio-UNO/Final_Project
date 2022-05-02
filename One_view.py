@@ -77,7 +77,7 @@ class Ui_ProjectOne_MainWindow(object):
         self.VoluemDown_btn.setText(_translate("ProjectOne_MainWindow", "-"))
         self.VolumeUp_btn.setText(_translate("ProjectOne_MainWindow", "+"))
         self.Mute_label.setText(_translate("ProjectOne_MainWindow", "Mute"))
-        self.Mute_btn.setText(_translate("ProjectOne_MainWindow", "On / Off"))
+        self.Mute_btn.setText(_translate("ProjectOne_MainWindow", "Y / N"))
         self.menuTelevision.setTitle(_translate("ProjectOne_MainWindow", "Television"))
 
 
