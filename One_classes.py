@@ -35,17 +35,17 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
 
     def power_on(self):
         self.__status = True
-        self.PowerOn_label.setText(f'Power: {self.__status}')
+        self.PowerOn_label.setText(f'Power: On')
         self.Channels_label.setText(f'Channel: {self.__channel}')
         self.Volume_label.setText(f'Volume: {self.__volume}')
-        self.Mute_label.setText(f'Mute: {self.__mute}')
+        self.Mute_label.setText(f'Mute: Off')
 
     def power_off(self):
         self.__status = False
         self.__mute = False
         self.__channel = Television.MIN_CHANNEL
         self.__volume = Television.MIN_VOLUME
-        self.PowerOn_label.setText(f'Power: ')
+        self.PowerOn_label.setText(f'Power: Off')
         self.Channels_label.setText(f'Channel: ')
         self.Volume_label.setText(f'Volume: ')
         self.Mute_label.setText(f'Mute: ')
@@ -53,12 +53,12 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
     def mute_on(self):
         if self.__status:
             self.__mute = True
-            self.Mute_label.setText(f'Mute: {self.__mute}')
+            self.Mute_label.setText(f'Mute: On')
 
     def mute_off(self):
         if self.__status:
             self.__mute = False
-            self.Mute_label.setText(f'Mute: {self.__mute}')
+            self.Mute_label.setText(f'Mute: Off')
 
     def channel_up(self):
         if self.__status:
