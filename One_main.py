@@ -8,7 +8,7 @@ def main():
     app = QApplication([])
     window = Television()
     window.show()
-    window.setFixedSize(250, 300)
+    window.setFixedSize(290, 295)
     app.exec_()
 
 
