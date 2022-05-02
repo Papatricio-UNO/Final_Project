@@ -33,9 +33,12 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
 
     def power(self):
         if self.power_button.isChecked():
-            self.__status = True
-        else:
-            self.__status = False
+            if not self.__status:
+                self.__status = True
+                self.power_label.setText('On')
+            else:
+                self.__status = False
+                self.power_label.setText('Off')
 
     def mute(self):
         if self.Mute_btn.isChecked():
