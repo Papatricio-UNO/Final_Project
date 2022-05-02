@@ -39,6 +39,6 @@
 #             self.__volume -= 1
 #
 #     def __str__(self):
-#         return f'TV status: Is on = {self.__status}, ' \
+#         return f'TV status: Is on = {self.__status}, Mute status: Is on = {self.__mute}'\
 #                f'Channel = {self.__channel}, Volume = {self.__volume}'
 #
