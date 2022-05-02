@@ -73,7 +73,7 @@ class Ui_ProjectOne_MainWindow(object):
     def retranslateUi(self, ProjectOne_MainWindow):
         _translate = QtCore.QCoreApplication.translate
         ProjectOne_MainWindow.setWindowTitle(_translate("ProjectOne_MainWindow", "MainWindow"))
-        self.PowerOn_label.setText(_translate("ProjectOne_MainWindow", "Power On:"))
+        self.PowerOn_label.setText(_translate("ProjectOne_MainWindow", "Power:"))
         self.PowerOn_btn.setText(_translate("ProjectOne_MainWindow", "On"))
         self.Channels_label.setText(_translate("ProjectOne_MainWindow", "Channels: "))
         self.ChannelDown_btn.setText(_translate("ProjectOne_MainWindow", "v"))
