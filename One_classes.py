@@ -12,10 +12,10 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
-        self.__channel = Television.MIN_CHANNEL
-        self.__volume = Television.MIN_VOLUME
-        self.__status = False
-        self.__mute = False
+        self.__channel: int = Television.MIN_CHANNEL
+        self.__volume: int = Television.MIN_VOLUME
+        self.__status: bool = False
+        self.__mute: bool = False
 
         # Power buttons
         self.PowerOn_btn.clicked.connect(self.power_on)
