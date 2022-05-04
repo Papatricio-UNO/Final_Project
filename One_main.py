@@ -1,5 +1,5 @@
 # Project One: Updated Lab 9
-# Features: GUI, mute button
+# Added Features: GUI, mute button, on / off buttons for power and mute functions
 
 from One_classes import *
 
