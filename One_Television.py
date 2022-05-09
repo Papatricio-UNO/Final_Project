@@ -6,10 +6,10 @@ class Television:
     MAX_VOLUME: int = 2
 
     def __init__(self):
-        self.__channel = Television.MIN_CHANNEL
-        self.__volume = Television.MIN_VOLUME
-        self.__status = False
-        self.__mute = False
+        self.__channel: int = Television.MIN_CHANNEL
+        self.__volume: int = Television.MIN_VOLUME
+        self.__status: bool = False
+        self.__mute: bool = False
 
     def get_channel(self):
         return self.__channel
@@ -24,10 +24,12 @@ class Television:
         return self.__mute
 
     def set_channel(self, channel):
-        self.__channel = channel
+        if 0 <= self.__channel <= Television.MAX_CHANNEL:
+            self.__channel = channel
 
     def set_volume(self, volume):
-        self.__volume = volume
+        if 0 <= self.__volume <= Television.MAX_VOLUME:
+            self.__volume = volume
 
     def set_status(self, status):
         self.__status = status
@@ -77,7 +79,3 @@ class Television:
     def __str__(self) -> str:
         return f'TV status: Is on = {self.__status}, Mute status: Is on = {self.__mute},' \
                f'Channel = {self.__channel}, Volume = {self.__volume}'
-
-
-
-
