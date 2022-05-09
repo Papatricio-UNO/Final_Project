@@ -86,3 +86,5 @@ class Ui_ProjectOne_MainWindow(object):
         self.PowerOff_btn.setText(_translate("ProjectOne_MainWindow", "Off"))
         self.MuteOff_btn.setText(_translate("ProjectOne_MainWindow", "Off"))
         self.menuTelevision.setTitle(_translate("ProjectOne_MainWindow", "Television"))
+
+
