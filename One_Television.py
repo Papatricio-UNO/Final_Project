@@ -1,58 +1,44 @@
 class Television:
-    MIN_CHANNEL: int = 0
-    MAX_CHANNEL: int = 3
+    """
+    A class representing details for a television object
+    """
+    MIN_CHANNEL: int = 0  # Minimum TV channel
+    MAX_CHANNEL: int = 3  # Maximum TV channel
 
-    MIN_VOLUME: int = 0
-    MAX_VOLUME: int = 2
+    MIN_VOLUME: int = 0  # Minimum TV volume
+    MAX_VOLUME: int = 2  # Maximum TV volume
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """""
+        Constructor to create initial state of a TV object.  
+        """""
         self.__channel: int = Television.MIN_CHANNEL
         self.__volume: int = Television.MIN_VOLUME
         self.__status: bool = False
         self.__mute: bool = False
 
-    def get_channel(self):
-        return self.__channel
+    def power(self) -> None:
+        """
+        Method to turn the television on or off
+        """
+        if not self.__status:
+            self.__status = True
+        else:
+            self.__status = False
 
-    def get_volume(self):
-        return self.__volume
-
-    def get_status(self):
-        return self.__status
-
-    def get_mute(self):
-        return self.__mute
-
-    def set_channel(self, channel):
-        if 0 <= self.__channel <= Television.MAX_CHANNEL:
-            self.__channel = channel
-
-    def set_volume(self, volume):
-        if 0 <= self.__volume <= Television.MAX_VOLUME:
-            self.__volume = volume
-
-    def set_status(self, status):
-        self.__status = status
-
-    def set_mute(self, mute):
-        self.__mute = mute
-
-    def power_on(self) -> None:
-        self.__status: bool = True
-
-    def power_off(self) -> None:
-        self.__status: bool = False
-        self.__mute: bool = False
-
-    def mute_on(self) -> None:
-        if self.__status:
-            self.__mute: bool = True
-
-    def mute_off(self) -> None:
-        if self.__status:
-            self.__mute: bool = False
+    def volume(self) -> None:
+        """
+        Method to turn the television on or off
+        """
+        if not self.__mute:
+            self.__mute = True
+        else:
+            self.__mute = False
 
     def channel_up(self) -> None:
+        """""
+        Method to go up a television channel 
+        """""
         if self.__status:
             if self.__channel < Television.MAX_CHANNEL:
                 self.__channel += 1
@@ -60,6 +46,9 @@ class Television:
                 self.__channel = Television.MIN_CHANNEL
 
     def channel_down(self) -> None:
+        """
+        Method to go down a television channel
+        """
         if self.__status:
             if self.__channel > Television.MIN_CHANNEL:
                 self.__channel -= 1
@@ -67,15 +56,22 @@ class Television:
                 self.__channel = Television.MAX_CHANNEL
 
     def volume_up(self) -> None:
-        if self.__status:
-            if not self.__mute and self.__volume != Television.MAX_VOLUME:
-                self.__volume += 1
+        """
+        Method to increase a television's volume
+        """
+        if self.__status and self.__volume != Television.MAX_VOLUME:
+            self.__volume += 1
 
     def volume_down(self) -> None:
-        if self.__status:
-            if not self.__mute and self.__volume != Television.MIN_VOLUME:
-                self.__volume -= 1
+        """
+        Method to decrease a television's volume
+        """
+        if self.__status and self.__volume != Television.MIN_VOLUME:
+            self.__volume -= 1
 
     def __str__(self) -> str:
-        return f'TV status: Is on = {self.__status}, Mute status: Is on = {self.__mute},' \
+        """
+        Method to print the power status, channel, and volume
+        """
+        return f'TV status: Is on = {self.__status}, ' \
                f'Channel = {self.__channel}, Volume = {self.__volume}'
