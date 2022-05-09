@@ -9,7 +9,7 @@ class Television(QMainWindow, Ui_ProjectOne_MainWindow):
     MIN_VOLUME: int = 0
     MAX_VOLUME: int = 2
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.__channel: int = Television.MIN_CHANNEL

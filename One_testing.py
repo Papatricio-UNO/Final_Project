@@ -24,4 +24,3 @@ class Test:
         assert self.tv1.__str__ == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
         self.tv1.power_off()
         assert self.tv1.__str__ == 'TV status: Is on = False, Mute status: Is on = False, Channel = 0, Volume = 0'
-
