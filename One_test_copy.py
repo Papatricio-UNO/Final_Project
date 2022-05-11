@@ -15,8 +15,6 @@ class MyTestCase(unittest.TestCase):
         self.tv1.power()
         assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
 
-
-
     def test_power_off(self):
         self.tv1.power()
         assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
