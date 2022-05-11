@@ -1,3 +1,4 @@
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from One_Screen import Ui_ProjectOne_MainWindow
 from One_Television import *
@@ -27,21 +28,64 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
 
     def gui_tv_power(self) -> None:
         self.tv.power()
-        self.TV_screen.setText(f'TV status, TV volume, TV channel')
+        if self.tv.get_status() is True:
+            self.TV_screen.setPixmap(QtGui.QPixmap("imgs/static.png"))
+        elif self.tv.get_status() is False:
+            self.TV_screen.setPixmap(QtGui.QPixmap("imgs/black_screen.jpg"))
+            self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
 
     def gui_tv_mute(self) -> None:
         self.tv.volume()
-        self.TV_screen.setText(f'TV is on: ')
+        if self.tv.get_mute() is True:
+            self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
+        elif self.tv.get_mute() is False:
+            if self.tv.get_volume() == 0:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
+            elif self.tv.get_volume() == 1:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
+            elif self.tv.get_volume() == 2:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
 
     def gui_channel_up(self) -> None:
-        self.tv.channel_up()
-        self.TV_screen.setText(f'TV status, TV volume, TV channel')
+        if self.tv.get_status() is True:
+            self.tv.channel_up()
+            if self.tv.get_channel() == 0:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/static.png"))
+            elif self.tv.get_channel() == 1:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/news.png"))
+            elif self.tv.get_channel() == 2:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/sports.png"))
+            elif self.tv.get_channel() == 3:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/cartoons.png"))
 
     def gui_channel_down(self) -> None:
-        self.tv.channel_down()
+        if self.tv.get_status() is True:
+            self.tv.channel_down()
+            if self.tv.get_channel() == 0:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/static.png"))
+            elif self.tv.get_channel() == 1:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/news.png"))
+            elif self.tv.get_channel() == 2:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/sports.png"))
+            elif self.tv.get_channel() == 3:
+                self.TV_screen.setPixmap(QtGui.QPixmap("imgs/cartoons.png"))
 
     def gui_volume_up(self) -> None:
-        self.tv.volume_up()
+        if self.tv.get_status() is True:
+            self.tv.volume_up()
+            if self.tv.get_volume() == 0:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
+            elif self.tv.get_volume() == 1:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
+            elif self.tv.get_volume() == 2:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
 
     def gui_volume_down(self) -> None:
-        self.tv.volume_down()
+        if self.tv.get_status() is True:
+            self.tv.volume_down()
+            if self.tv.get_volume() == 0:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
+            elif self.tv.get_volume() == 1:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
+            elif self.tv.get_volume() == 2:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
