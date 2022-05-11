@@ -17,6 +17,18 @@ class Television:
         self.__status: bool = False
         self.__mute: bool = False
 
+    def get_channel(self) -> int:
+        return self.__channel
+
+    def get_volume(self) -> int:
+        return self.__volume
+
+    def get_status(self) -> bool:
+        return self.__status
+
+    def get_mute(self) -> bool:
+        return self.__mute
+
     def power(self) -> None:
         """
         Method to turn the television on or off
@@ -59,15 +71,17 @@ class Television:
         """
         Method to increase a television's volume
         """
-        if self.__status and self.__volume != Television.MAX_VOLUME:
-            self.__volume += 1
+        if self.__status:
+            if not self.__mute and self.__volume != Television.MAX_VOLUME:
+                self.__volume += 1
 
     def volume_down(self) -> None:
         """
         Method to decrease a television's volume
         """
-        if self.__status and self.__volume != Television.MIN_VOLUME:
-            self.__volume -= 1
+        if self.__status:
+            if not self.__mute and self.__volume != Television.MIN_VOLUME:
+                self.__volume -= 1
 
     def __str__(self) -> str:
         """
