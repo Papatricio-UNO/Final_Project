@@ -73,5 +73,5 @@ class Television:
         """
         Method to print the power status, channel, and volume
         """
-        return f'TV status: Is on = {self.__status}, ' \
+        return f'TV status: Is on = {self.__status}, Mute status: Is on = {self.__mute}, ' \
                f'Channel = {self.__channel}, Volume = {self.__volume}'
