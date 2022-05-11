@@ -8,7 +8,7 @@ def main():
     app = QApplication([])
     window = GUI()
     window.show()
-    window.setFixedSize(595, 414)
+    window.setFixedSize(599, 477)
     app.exec_()
 
 
