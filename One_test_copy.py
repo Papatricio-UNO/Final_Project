@@ -13,16 +13,15 @@ class MyTestCase(unittest.TestCase):
 
     def test_init(self):
         self.tv1.power()
-        self.assertEqual(self.tv1.__str__(), 'TV status: Is on = True, Mute status: Is on = False,' 'Channel = 0, '
-                                             'Volume = 0')
+        assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
+
+
 
     def test_power_off(self):
         self.tv1.power()
-        self.assertEqual(self.tv1.__str__(), 'TV status: Is on = True, Mute status: Is on = False,' 'Channel = 0, '
-                                             'Volume = 0')
+        assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
         self.tv1.power()
-        self.assertEqual(self.tv1.__str__(), 'TV status: Is on = False, Mute status: Is on = False,' 'Channel = 0, '
-                                             'Volume = 0')
+        assert self.tv1.__str__() == 'TV status: Is on = False, Mute status: Is on = False, Channel = 0, Volume = 0'
 
     def test_channel_up(self):
         self.tv1.channel_up()
@@ -75,8 +74,6 @@ class MyTestCase(unittest.TestCase):
         assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 1'
 
     def test_mute(self):
-        self.tv1.volume()
-        assert self.tv1.__str__() == 'TV status: Is on = False, Mute status: Is on = False, Channel = 0, Volume = 0'
         self.tv1.power()
         assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 0'
         self.tv1.volume()
