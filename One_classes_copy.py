@@ -37,8 +37,10 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
     def gui_tv_mute(self) -> None:
         self.tv.volume()
         if self.tv.get_mute() is True:
+            self.Mute_label.setText("Mute: On")
             self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
         elif self.tv.get_mute() is False:
+            self.Mute_label.setText("Mute: Off")
             if self.tv.get_volume() == 0:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
             elif self.tv.get_volume() == 1:
