@@ -20,7 +20,7 @@ class Ui_ProjectOne_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(ProjectOne_MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Power_label = QtWidgets.QLabel(self.centralwidget)
-        self.Power_label.setGeometry(QtCore.QRect(240, 270, 51, 16))
+        self.Power_label.setGeometry(QtCore.QRect(240, 270, 91, 16))
         self.Power_label.setObjectName("Power_label")
         self.Power_btn = QtWidgets.QPushButton(self.centralwidget)
         self.Power_btn.setGeometry(QtCore.QRect(220, 290, 81, 41))
