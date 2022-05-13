@@ -29,12 +29,16 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
     def gui_tv_power(self) -> None:
         self.tv.power()
         if self.tv.get_status() is True:
+            self.Power_label.setText("Power: On")
             self.TV_screen.setPixmap(QtGui.QPixmap("imgs/static.png"))
         elif self.tv.get_status() is False:
+            self.Power_label.setText("Power: Off")
             self.TV_screen.setPixmap(QtGui.QPixmap("imgs/black_screen.jpg"))
             self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
 
     def gui_tv_mute(self) -> None:
+        if self.tv.get_status() is not True:
+            return
         self.tv.volume()
         if self.tv.get_mute() is True:
             self.Mute_label.setText("Mute: On")
@@ -74,6 +78,8 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
 
     def gui_volume_up(self) -> None:
         if self.tv.get_status() is True:
+            if self.tv.get_mute() is not False:
+                return
             self.tv.volume_up()
             if self.tv.get_volume() == 0:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
@@ -84,6 +90,8 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
 
     def gui_volume_down(self) -> None:
         if self.tv.get_status() is True:
+            if self.tv.get_mute() is not False:
+                return
             self.tv.volume_down()
             if self.tv.get_volume() == 0:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/mute.png"))
