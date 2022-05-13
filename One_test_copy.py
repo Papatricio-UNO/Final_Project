@@ -58,7 +58,7 @@ class MyTestCase(unittest.TestCase):
         assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 1'
         self.tv1.volume_up()
         self.tv1.volume_up()
-        assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 2'
+        assert self.tv1.__str__() == 'TV status: Is on = True, Mute status: Is on = False, Channel = 0, Volume = 3'
 
     def test_volume_down(self):
         self.tv1.volume_down()
