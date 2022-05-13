@@ -51,6 +51,8 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
             elif self.tv.get_volume() == 2:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
+            elif self.tv.get_volume() == 3:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volumeMax.png"))
 
     def gui_channel_up(self) -> None:
         if self.tv.get_status() is True:
@@ -87,6 +89,8 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
             elif self.tv.get_volume() == 2:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
+            elif self.tv.get_volume() == 3:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volumeMax.png"))
 
     def gui_volume_down(self) -> None:
         if self.tv.get_status() is True:
@@ -99,3 +103,5 @@ class GUI(QMainWindow, Ui_ProjectOne_MainWindow):
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume01.png"))
             elif self.tv.get_volume() == 2:
                 self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volume02.png"))
+            elif self.tv.get_volume() == 3:
+                self.Volume_display.setPixmap(QtGui.QPixmap("imgs/volumeMax.png"))

@@ -6,7 +6,7 @@ class Television:
     MAX_CHANNEL: int = 3  # Maximum TV channel
 
     MIN_VOLUME: int = 0  # Minimum TV volume
-    MAX_VOLUME: int = 2  # Maximum TV volume
+    MAX_VOLUME: int = 3  # Maximum TV volume
 
     def __init__(self) -> None:
         """""
